@@ -1,11 +1,11 @@
 ---
 name: meridian-api
-description: Connect to the Meridian platform via API key — create an mrd_ key, authenticate with Bearer token, handle rate limits and errors. Use when setting up API access, storing keys, or making your first authenticated call.
+description: Connect to Meridian via API key (mrd_) or Agent Auth — create a key, use Bearer token, or discover via /.well-known/agent-configuration with delegated device-auth/CIBA and capability-scoped JWTs. Use when setting up API or agent access.
 ---
 
-# Meridian API — Connect with Your API Key
+# Meridian API — Connect with Your API Key or Agent Auth
 
-Use this when you want an AI assistant or script to act on your Meridian account via the API.
+Use this when you want an AI assistant, script, or autonomous agent to act on your Meridian account.
 
 ## Get an API key
 
@@ -54,3 +54,13 @@ curl -s -H "Authorization: Bearer $MERIDIAN_API_KEY" \
 ```
 
 If this returns JSON, your assistant is connected. Use `/skill:meridian-services` next to browse the catalog.
+
+## Agent Auth (AI agents, capability-scoped)
+
+Meridian also exposes **Agent Auth** (`@better-auth/agent-auth`) for AI agents that need scoped, auditable, short-lived access — no long-lived `mrd_` key in the agent's env.
+
+- **Discovery**: `GET /.well-known/agent-configuration` (via `auth.api.getAgentConfiguration()`) — lists issuer, endpoints, `default_location` (execute URL), and capabilities.
+- **Capabilities** (narrow, reviewable): `list_services`, `get_service`, `list_categories`, `create_service_request`, `list_service_requests`, `get_service_request`, `get_workflow_status`, `list_request_steps`, `get_payment_status`, `verify_payment`, `list_meetings`, `create_meeting`, `respond_to_meeting`. Reads (`GET`) use `approvalStrength: session`; mutating calls (`verify_payment`, `create_*`) can require stronger verification.
+- **Flow**: agent discovers → lists capabilities → registers & requests grants → user approves via **device authorization** or **CIBA** → agent signs short-lived JWTs (`aud` = `default_location` or capability `location`) and calls `POST /capability/execute` (or the capability's own `location`). Server verifies JWT + grant via `auth.api.getAgentSession({ headers })` / `verifyAgentRequest(request, auth)` and runs `onExecute`.
+- **Adapters**: OpenAPI (`createFromOpenAPI(spec, { baseUrl, resolveHeaders })`) and MCP are supported — the MCP server can be exposed as agent-auth tools so any MCP-compatible agent can discover and call capabilities.
+- **When to use what**: simple automation / personal scripts → `mrd_` API key. Third-party or autonomous AI agents that need least-privilege, revocable, auditable access → Agent Auth with delegated/autonomous modes.
