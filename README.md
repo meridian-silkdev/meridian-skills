@@ -1,4 +1,4 @@
-# @meridian/skills
+# @meridiantoolkit/skills
 
 Agent skills for the **Meridian** platform — user-facing skills for customers using Meridian through an API key (`mrd_`). Same `SKILL.md` files work as a [pi Agent Skill](https://agentskills.io) package or a Claude Code plugin (`.claude-plugin/plugin.json` included) — no code, so nothing to port. Codex CLI has no skills concept; Codex users get the same coverage through the `meridian` MCP server's tool descriptions instead (see `meridian-mcp`).
 
@@ -22,7 +22,7 @@ All skills assume `Authorization: Bearer mrd_…` and `MERIDIAN_API_URL`. See `m
 pi install ./meridian-skills          # project-local
 pi install /absolute/path/to/meridian-skills  # global
 # or via npm after publish
-pi install npm:@meridian/skills
+pi install npm:@meridiantoolkit/skills
 ```
 
 Or add to `.pi/settings.json`:
