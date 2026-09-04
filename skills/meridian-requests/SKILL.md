@@ -5,11 +5,11 @@ description: Create and track Meridian service requests via API — submit a req
 
 # Meridian Requests — Create & Track Your Requests
 
-Requires `Authorization: Bearer mrd_…` (see `/skill:meridian-api`). This is the user-facing request lifecycle — you are the customer.
+Requires `Authorization: Bearer mrd_…` (see `meridian-api`). This is the user-facing request lifecycle — you are the customer.
 
 ## Create a request
 
-Pick a service first (`/skill:meridian-services`). Then:
+Pick a service first (`meridian-services`). Then:
 
 ```bash
 curl -X POST -H "Authorization: Bearer $MERIDIAN_API_KEY" \
@@ -54,7 +54,7 @@ curl -H "Authorization: Bearer $MERIDIAN_API_KEY" \
 
 - Required documents appear as `documentRequest` cards (with `requirementId`, `documentName`, `allowedFormats`, `status`). Upload via the messages API or the Documents tab — the card flips to `FULFILLED` once the file is attached.
 - Some services have a details form — fill it from the `formConfig` check above.
-- When a quote is ready you will see a `quoteGenerated` card (see `/skill:meridian-payments`).
+- When a quote is ready you will see a `quoteGenerated` card (see `meridian-payments`).
 
 ## List your requests
 

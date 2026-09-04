@@ -1,9 +1,22 @@
 {
-  "name": "meridian-skills",
+  "name": "@meridian/skills",
   "version": "0.1.0",
-  "description": "Pi agent skills for the Meridian business-services platform (workflow, service catalog, requests, payments, i18n).",
-  "keywords": ["pi-package"],
+  "description": "Agent skills for the Meridian business-services platform (workflow, service catalog, requests, payments, i18n). Works as a pi package or a Claude Code plugin.",
+  "keywords": ["pi-package", "claude-code-plugin"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meridian-silkdev/meridian-skills.git"
+  },
+  "homepage": "https://github.com/meridian-silkdev/meridian-skills#readme",
+  "bugs": "https://github.com/meridian-silkdev/meridian-skills/issues",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "skills",
+    ".claude-plugin"
+  ],
   "pi": {
     "skills": ["./skills"]
   }

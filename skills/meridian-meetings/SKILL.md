@@ -5,7 +5,7 @@ description: Manage Meridian meetings via API — list meetings for a request, c
 
 # Meridian Meetings — Schedule & Respond
 
-Requires `Authorization: Bearer mrd_…` (see `/skill:meridian-api`). Meetings are Teams meetings created via Microsoft Graph by a single organizer account — guests join via `joinWebUrl`, no Microsoft account needed.
+Requires `Authorization: Bearer mrd_…` (see `meridian-api`). Meetings are Teams meetings created via Microsoft Graph by a single organizer account — guests join via `joinWebUrl`, no Microsoft account needed.
 
 ## List meetings
 

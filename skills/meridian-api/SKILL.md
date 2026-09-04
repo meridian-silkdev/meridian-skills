@@ -53,7 +53,7 @@ curl -s -H "Authorization: Bearer $MERIDIAN_API_KEY" \
   "$MERIDIAN_API_URL/api/services?country=TN" | head -c 500
 ```
 
-If this returns JSON, your assistant is connected. Use `/skill:meridian-services` next to browse the catalog.
+If this returns JSON, your assistant is connected. Use `meridian-services` next to browse the catalog.
 
 ## Agent Auth (AI agents, capability-scoped)
 

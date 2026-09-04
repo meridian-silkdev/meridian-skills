@@ -5,7 +5,7 @@ description: Pay for Meridian quotes — Flouci for Tunisia (local wallet/card) 
 
 # Meridian Payments — Pay Your Quote
 
-You have a request at `QUOTE` or `PAYMENT` (see `/skill:meridian-requests`). This skill covers the user-facing payment choices.
+You have a request at `QUOTE` or `PAYMENT` (see `meridian-requests`). This skill covers the user-facing payment choices.
 
 ## Choice: Flouci (Tunisia, local) vs Stripe (international)
 

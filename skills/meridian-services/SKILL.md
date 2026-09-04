@@ -5,7 +5,7 @@ description: Browse the Meridian service catalog via API — list categories, se
 
 # Meridian Services — Browse the Catalog
 
-You have an API key (see `/skill:meridian-api`). This skill helps you find the right service to request.
+You have an API key (see `meridian-api`). This skill helps you find the right service to request.
 
 ## List categories
 
@@ -41,7 +41,7 @@ Key fields to show the user:
 
 - If they describe a need in plain language (“I need a company in Tunisia”), search services for similar titles/descriptions and suggest the closest match.
 - Summarize requirements clearly: “This service needs X documents (Y format) and Z form fields. Estimated: N days.”
-- If no catalog service fits, they can still create a custom request with `customTitle` (see `/skill:meridian-requests`).
+- If no catalog service fits, they can still create a custom request with `customTitle` (see `meridian-requests`).
 
 ## Filter tips
 
