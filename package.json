@@ -4,7 +4,14 @@
   "description": "Agent skills for the Meridian business-services platform (workflow, service catalog, requests, payments, i18n). Works as a pi package or a Claude Code plugin.",
   "keywords": [
     "pi-package",
-    "claude-code-plugin"
+    "claude-code-plugin",
+    "startups",
+    "founder-toolkit",
+    "startup-services",
+    "startup-tools",
+    "company-incorporation",
+    "legal-services",
+    "visa"
   ],
   "license": "MIT",
   "repository": {
