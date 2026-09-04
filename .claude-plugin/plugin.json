@@ -2,10 +2,19 @@
   "name": "meridian-skills",
   "description": "User-facing skills for the Meridian business-services platform: API auth, service catalog, requests, payments (Flouci/Stripe), meetings.",
   "version": "0.1.0",
-  "author": { "name": "Meridian" },
+  "author": {
+    "name": "Meridian"
+  },
   "homepage": "https://github.com/meridian-silkdev/meridian-skills#readme",
   "repository": "https://github.com/meridian-silkdev/meridian-skills",
   "license": "MIT",
-  "keywords": ["meridian", "business-services", "visa", "legal-services"],
-  "skills": ["./skills/"]
+  "keywords": [
+    "meridian",
+    "business-services",
+    "visa",
+    "legal-services"
+  ],
+  "skills": [
+    "./skills/"
+  ]
 }

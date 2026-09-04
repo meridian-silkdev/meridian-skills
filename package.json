@@ -2,7 +2,10 @@
   "name": "@meridiantoolkit/skills",
   "version": "0.1.0",
   "description": "Agent skills for the Meridian business-services platform (workflow, service catalog, requests, payments, i18n). Works as a pi package or a Claude Code plugin.",
-  "keywords": ["pi-package", "claude-code-plugin"],
+  "keywords": [
+    "pi-package",
+    "claude-code-plugin"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,11 +16,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "version": "node scripts/sync-plugin-version.mjs && git add .claude-plugin/plugin.json"
+  },
   "files": [
     "skills",
     ".claude-plugin"
   ],
   "pi": {
-    "skills": ["./skills"]
+    "skills": [
+      "./skills"
+    ]
   }
 }

@@ -51,3 +51,10 @@ Invocation syntax differs by host — the skill names themselves don't:
 | `meridian-meetings` | `/skill:meridian-meetings` | `/meridian-meetings` |
 
 Either host can also load a skill automatically when its `description` matches what you're asking for — you don't have to type the slash form.
+
+## CI/CD
+
+- **`.github/workflows/ci.yml`** — every push to `main` and every PR: installs the `claude` CLI and runs `claude plugin validate .`.
+- **`.github/workflows/publish.yml`** — fires on a **published GitHub Release**: validates, checks the release tag against both `package.json` and `.claude-plugin/plugin.json` versions, then `npm publish --provenance` via npm **Trusted Publishing (OIDC)** — no `NPM_TOKEN` secret needed. `npm version <bump>` keeps both version fields in sync automatically (see `scripts/sync-plugin-version.mjs`). Note this only covers the `pi install npm:@meridiantoolkit/skills` path — Claude Code installs straight from the git repo/tag and needs no publish step.
+
+**One-time setup after the first manual publish:** npmjs.com → package settings → Trusted Publisher → GitHub Actions → `meridian-silkdev/meridian-skills`, workflow `publish.yml`.
