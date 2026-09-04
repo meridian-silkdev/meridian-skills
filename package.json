@@ -1,6 +1,6 @@
 {
   "name": "@meridiantoolkit/skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Agent skills for the Meridian business-services platform (workflow, service catalog, requests, payments, i18n). Works as a pi package or a Claude Code plugin.",
   "keywords": [
     "pi-package",

@@ -1,7 +1,7 @@
 {
   "name": "meridian-skills",
   "description": "User-facing skills for the Meridian business-services platform: API auth, service catalog, requests, payments (Flouci/Stripe), meetings.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Meridian"
   },
